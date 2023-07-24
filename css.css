@@ -1,0 +1,635 @@
+*,
+*::after,
+*::before {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+   -webkit-user-select: none;
+   -ms-user-select: none;
+   user-select: none;
+}
+
+:root {
+   --color1: #0c1317;
+   --color2: #222E35;
+   --color3: #42CBA5;
+   --color4: #373737;
+   --color5: #DFE4E7;
+   --color6: #0e161b;
+   --color7: #1a7b3f;
+   --texColor1: #D1D6D8;
+   --texColor2: #8898A1;
+   --texColor3: #f3f3f3;
+   --textSize1: 1rem;
+   --textSize2: .75rem;
+}
+
+.shortingText {
+   white-space: nowrap;
+   overflow: hidden;
+   text-overflow: ellipsis;
+}
+
+body {
+   font-family: sans-serif;
+   background: #272938;
+   width: 100vw;
+   height: 100vh;
+}
+
+.blackSpace {
+   background: var(--color6);
+   width: 100%;
+   height: 10px;
+   border: none;
+}
+
+.whiteSpace {
+   width: 100%;
+   height: 2px;
+   border: none;
+   background-color: var(--color2);
+}
+
+
+.plus {
+   position: relative;
+}
+
+.plus::after {
+   font-family: 'Courier New', Courier, monospace;
+   font-weight: 500;
+   content: "+";
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-size: xx-large;
+   color: var(--texColor3);
+   width: 25px;
+   height: 25px;
+   background: var(--color3);
+   position: absolute;
+   bottom: -3px;
+   right: -3px;
+   border-radius: 100%;
+   border: 2px solid var(--color1);
+}
+
+.screen {
+   position: absolute;
+   left: 50%;
+   top: 50%;
+   transform: translate(-50%, -50%);
+   width: 350px;
+   height: 600px;
+   background-color: var(--color1);
+}
+
+header {
+   display: flex;
+   width: 100%;
+   height: auto;
+   background: var(--color2);
+   flex-direction: column;
+   color: var(--texColor2);
+
+}
+
+header .header .icons:not(>ul):hover,
+header .slider:hover {
+   color: var(--texColor1);
+   cursor: pointer;
+
+}
+
+header .icons ul {
+   position: absolute;
+   right: 10px;
+   top: 50px;
+   list-style: none;
+   background: var(--color4);
+   display: none;
+}
+
+header .icons ul li {
+   width: 100%;
+   height: max-content;
+   padding: 10px;
+}
+
+header .icons ul li:hover {
+   background: #ffffff3c;
+}
+
+header .header {
+   display: flex;
+   flex-direction: row;
+   flex-wrap: nowrap;
+   justify-content: space-between;
+   align-items: center;
+   padding: 10px;
+   height: 60px;
+}
+
+header .header h1 {
+   font-size: 1.5em;
+   font-weight: 400;
+}
+
+header .header .icons {
+   display: flex;
+   gap: 15px;
+}
+
+header .slider {
+   width: 100%;
+   height: 30px;
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: space-around;
+   font-size: .90rem;
+   background: var(--color2);
+}
+
+header .slider div {
+   height: 100%;
+   width: 100%;
+   text-align: center;
+}
+
+header .slider div p {
+   height: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+header .slider div.selected {
+   color: var(--color3);
+}
+
+header .slider div.selected::after {
+   content: "";
+   display: block;
+   background-color: var(--color3);
+   width: 100%;
+   height: 1px;
+   margin-top: -1px;
+}
+
+main {
+   width: 100%;
+   height: max-content;
+   display: flex;
+   flex-direction: column;
+}
+
+/* --------------------- */
+main .community .communityBox {
+   width: 100%;
+   display: flex;
+   flex-direction: row;
+   gap: 10px;
+   padding: 15px;
+   cursor: pointer;
+}
+
+main .community .communityBox:hover {
+   background-color: var(--color4);
+}
+
+main .community .communityBox .Photo {
+   width: min-content;
+   height: auto;
+   background: var(--texColor2);
+   color: var(--color5);
+   width: 40px;
+   height: 40px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   border-radius: 10px;
+}
+
+
+
+main .community .communityBox .Photo img {
+   width: 40px;
+   border-radius: 10px;
+}
+
+main .community .communityBox .communitydiv {
+   width: 85%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+}
+
+main .community .communityBox .communitydiv div {
+   width: 100%;
+}
+
+main .community .communityBox .communitydiv div:nth-child(1) {
+   display: flex;
+   flex-direction: row;
+}
+
+main .community .communityBox .communitydiv .name {
+   width: 75%;
+   color: var(--texColor1);
+}
+
+main .community .communityBox .communitydiv .date {
+   width: 20%;
+   font-size: var(--textSize2);
+   color: var(--texColor2);
+   text-align: end;
+}
+
+main .community .communityBox .communitydiv .community {
+   width: calc(100% - 10px);
+   color: var(--texColor2);
+   font-size: var(--textSize1);
+}
+
+main .community .communityBox.announcements .Photo{
+   color: var(--color7);
+   font-weight: 900;
+   font-size: var(--textSize1);
+   background-color: var(--color3);
+   border-radius: 100%;
+}
+
+main .community h5 {
+   color: var(--texColor2);
+   margin: 5px 15px;
+}
+
+.community footer {
+   width: 100%;
+   height: max-content;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   background-color: var(--color1);
+}
+
+.community footer p {
+   display: block;
+   color: var(--texColor2);
+   font-size: .70rem;
+   margin: 20px;
+}
+
+.community footer p:nth-child(1) {
+   color: #c3c8cb;
+   font-size: var(--textSize1);
+   font-weight: 600;
+   margin: 20px;
+}
+
+.community footer p a {
+   color: var(--color3);
+   text-decoration: none;
+}
+
+
+
+
+/* ------------------------- */
+main .messages .messageBox {
+   width: 100%;
+   display: flex;
+   flex-direction: row;
+   gap: 10px;
+   padding: 15px;
+   cursor: pointer;
+}
+
+main .messages .messageBox:hover {
+   background-color: var(--color4);
+}
+
+main .messages .messageBox .Photo {
+   width: min-content;
+   height: auto;
+}
+
+main .messages .messageBox .Photo img {
+   width: 40px;
+   border-radius: 100%;
+}
+
+main .messages .messageBox .messagediv {
+   width: 85%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+}
+
+main .messages .messageBox .messagediv div {
+   width: 100%;
+}
+
+main .messages .messageBox .messagediv div:nth-child(1) {
+   display: flex;
+   flex-direction: row;
+}
+
+main .messages .messageBox .messagediv .name {
+   width: 75%;
+   color: var(--texColor1);
+}
+
+main .messages .messageBox .messagediv .date {
+   width: 20%;
+   font-size: var(--textSize2);
+   color: var(--texColor2);
+   text-align: end;
+}
+
+main .messages .messageBox .messagediv .message {
+   width: calc(100% - 10px);
+   color: var(--texColor2);
+   font-size: var(--textSize1);
+}
+
+.messages footer {
+   width: 100%;
+   height: max-content;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   background-color: var(--color1);
+}
+
+.messages footer p {
+   display: block;
+   color: var(--texColor2);
+   font-size: .70rem;
+   margin: 20px;
+}
+
+.messages footer p:nth-child(1) {
+   color: #c3c8cb;
+   font-size: var(--textSize2);
+   font-weight: 600;
+   margin: 20px;
+}
+
+.messages footer p a {
+   color: var(--color3);
+   text-decoration: none;
+}
+
+.messages footer hr {
+   width: 100%;
+   height: 2px;
+   border: none;
+   background-color: var(--color2);
+}
+
+/* --------------------- */
+main .situations .situationBox {
+   width: 100%;
+   display: flex;
+   flex-direction: row;
+   gap: 10px;
+   padding: 15px;
+   cursor: pointer;
+}
+
+main .situations .situationBox:hover {
+   background-color: var(--color4);
+}
+
+main .situations .situationBox .Photo {
+   width: min-content;
+   height: auto;
+}
+
+main .situations .situationBox .Photo .user {
+   width: 40px;
+   height: 40px;
+   position: relative;
+}
+
+main .situations .situationBox .Photo .user::after {
+   font-family: 'Courier New', Courier, monospace;
+   font-weight: 500;
+   content: "+";
+   display: block;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-size: xx-large;
+   color: var(--texColor3);
+   width: 25px;
+   height: 25px;
+   background: var(--color3);
+   position: absolute;
+   bottom: -3px;
+   right: -3px;
+   border-radius: 100%;
+   border: 2px solid var(--color1);
+}
+
+
+main .situations .situationBox .Photo img {
+   width: 40px;
+   border-radius: 100%;
+}
+
+main .situations .situationBox .situationdiv {
+   width: 85%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+}
+
+main .situations .situationBox .situationdiv div {
+   width: 100%;
+}
+
+main .situations .situationBox .situationdiv div:nth-child(1) {
+   display: flex;
+   flex-direction: row;
+}
+
+main .situations .situationBox .situationdiv .name {
+   width: 75%;
+   color: var(--texColor1);
+}
+
+main .situations .situationBox .situationdiv .situation {
+   width: calc(100% - 10px);
+   color: var(--texColor2);
+   font-size: var(--textSize1);
+}
+
+main .situations h5 {
+   color: var(--texColor2);
+   margin: 5px 15px;
+}
+
+.situations footer {
+   width: 100%;
+   height: max-content;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   background-color: var(--color1);
+}
+
+.situations footer p {
+   display: block;
+   color: var(--texColor2);
+   font-size: .70rem;
+   margin: 20px;
+}
+
+.situations footer p:nth-child(1) {
+   color: #c3c8cb;
+   font-size: var(--textSize1);
+   font-weight: 600;
+   margin: 20px;
+}
+
+.situations footer p a {
+   color: var(--color3);
+   text-decoration: none;
+}
+
+.situations footer hr {
+   width: 100%;
+   height: 2px;
+   border: none;
+   background-color: var(--color2);
+}
+
+
+
+/* --------------------- */
+main .calls .callBox {
+   width: 100%;
+   display: flex;
+   flex-direction: row;
+   gap: 10px;
+   padding: 15px;
+   cursor: pointer;
+}
+
+main .calls .callBox:hover {
+   background-color: var(--color4);
+}
+
+main .calls .callBox .Photo {
+   width: min-content;
+   height: auto;
+}
+
+main .calls .callBox .Photo .user {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   transform: rotate(-45deg);
+   width: 40px;
+   height: 40px;
+   position: relative;
+   color: var(--texColor3);
+   background: var(--color3);
+   border-radius: 100%;
+
+}
+
+
+main .calls .callBox .Photo img {
+   width: 40px;
+   border-radius: 100%;
+}
+
+main .calls .callBox .calldiv {
+   width: 85%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+}
+
+main .calls .callBox .calldiv div {
+   width: 100%;
+}
+
+main .calls .callBox .calldiv div span {
+   font-size: medium;
+}
+
+main .calls .callBox .calldiv div:nth-child(1) {
+   display: flex;
+   flex-direction: row;
+}
+
+main .calls .callBox .calldiv .name {
+   width: 75%;
+   color: var(--texColor1);
+}
+
+main .calls .callBox .calldiv .call {
+   width: calc(100% - 10px);
+   color: var(--texColor2);
+   font-size: var(--textSize1);
+}
+
+main .calls .callBox .phone {
+   width: max-content;
+   color: var(--color3);
+   font-size: xx-large;
+}
+
+main .calls h5 {
+   color: var(--texColor2);
+   margin: 5px 15px;
+}
+
+.calls footer {
+   width: 100%;
+   height: max-content;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   background-color: var(--color1);
+}
+
+.calls footer p {
+   display: block;
+   color: var(--texColor2);
+   font-size: .70rem;
+   margin: 20px;
+}
+
+.calls footer p:nth-child(1) {
+   color: #c3c8cb;
+   font-size: var(--textSize1);
+   font-weight: 600;
+   margin: 20px;
+}
+
+.calls footer p a {
+   color: var(--color3);
+   text-decoration: none;
+}
+
+.calls footer hr {
+   width: 100%;
+   height: 2px;
+   border: none;
+   background-color: var(--color2);
+}
